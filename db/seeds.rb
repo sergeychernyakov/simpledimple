@@ -10,6 +10,8 @@ user = User.find_or_initialize_by(email: 'test@gmail.com')
 user.first_name = 'test'
 user.last_name = 'user'
 user.password = 'testing123'
+user.password_confirmation = 'testing123'
+user.phone = '+17138934827'
 user.save!
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
