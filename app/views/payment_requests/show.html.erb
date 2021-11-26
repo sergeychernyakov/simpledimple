@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Payment Request</h2>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="portlet-body">
+        <div class="table-scrollable">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th> Title </th>
+                <td> <%= @payment_request.title %> </td>
+              </tr>
+
+              <tr>
+                <th> Description </th>
+                <td> <%= @payment_request.description %> </td>
+              </tr>
+              <% number = 1 %>
+              <% @payment_request.billing_details.each do |detail| %>
+              <tr>
+                <th> Recipient #<%= number %> </th>
+                <td></td>
+              </tr>
+              <tr>
+                <th> Phone </th>
+                <td>  <%= detail.phone %>  </td>
+              </tr>
+              <tr>
+                <th> Per Head </th>
+                <td>  <%= detail.per_head %>  </td>
+              </tr>
+              <% number = number + 1 %>
+              <% end %>
+
+            </thead>
+          <tbody>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Payment Request", payment_requests_path, method: :get, class: 'btn btn-default' %>
+  
+</div>

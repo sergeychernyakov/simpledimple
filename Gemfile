@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -29,13 +30,15 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'cocoon'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'dotenv-rails'
 gem 'twilio-ruby', '~> 5.61.0'
 # Authentication
 gem 'devise'
+gem "image_processing", ">= 1.2"
+
 
 # ActiveAdmin
 gem 'activeadmin'

@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   after_create :send_verfivation_code
 
+  has_many :billing_details, dependent: :destroy
+  has_many :payment_requests, through: :billing_details
+
   def to_s
     "#{first_name} #{last_name}"
   end
