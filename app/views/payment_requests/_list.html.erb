@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Payment Requests</h2>           
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Bill Total</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @payment_request.each do |payment_request| %>
+        <tr>
+          <td><%= payment_request.title %></td>
+          <td><%= payment_request.bill_total %></td>
+          <td><%= link_to "Show", payment_request_path(payment_request.id), method: :get, class: 'btn btn-default' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

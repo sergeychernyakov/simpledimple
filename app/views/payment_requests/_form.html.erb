@@ -1,0 +1,57 @@
+<div class="container">
+  <h2>Payment Request</h2>
+  <%= form_for(@payment_request, :url => @payment_request.new_record? ? payment_requests_path : payment_request_path(@payment_request) ) do |f| %>
+    <%= render partial: "layouts/shared/standard_errors", locals: {obj: @payment_request}%>
+    <div class="form-group">
+      <label for="email">Title:</label>
+      <%= f.text_field :title , class: "form-control", placeholder: "title", required: true %>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Description:</label>
+      <%= f.text_area :description , class: "form-control", placeholder: "Tell more about payment(optional)" %>
+    </div>
+
+    <div class="form-group">
+      <label for="pwd">Bill Attachment:</label>
+      <%= f.file_field :bill_attachment , class: "form-control", required: true %>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default" data-collapsed="0">
+        
+          <a data-toggle="collapse" data-target="#billing_detail">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <span class="account_new_header">Recipients</span>
+              </div>
+              <div class="panel-options">
+                <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+              </div>
+            </div>
+          </a>
+
+          <div id="billing_detail" class="collapse">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="col-md-6">
+                    <%= f.fields_for :billing_details do |billing_detail_form| %>
+                      <%= render 'billing_detail_fields', f: billing_detail_form %>
+                    <% end %>
+                    <div class="slinks">
+                      <%= link_to_add_association 'Add More Recipient', f, :billing_details , class: "btn btn-default" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <%= f.submit "Submit", class: 'btn btn-default' %>
+  <% end %>
+</div>

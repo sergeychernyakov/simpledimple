@@ -9,13 +9,16 @@ class User < ApplicationRecord
 
   after_create :send_verfivation_code
 
+  has_many :billing_details, dependent: :destroy
+  has_many :payment_requests, through: :billing_details
+
   def to_s
     "#{first_name} #{last_name}"
   end
 
   def send_verfivation_code
     generate_verification_code
-    Twilio::SmsSender.new(self).send!
+    Twilio::SmsSender.new(self, "#{verification_code} is your verification code").send!
   end
 
   private

@@ -1,0 +1,12 @@
+<div class="nested-fields">
+  <div class="form-group">
+    <label>Phone</label>
+    <div class="input-group">
+      <%= f.text_field :phone, class: "form-control" %>
+      <% if f.object.new_record? %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to_remove_association "<i class='fa fa-trash'></i>".html_safe, f , class: "btn btn-default" %>
+</div>

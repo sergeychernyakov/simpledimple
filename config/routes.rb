@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :payment_requests
+
   root to: 'home#index'
 end
