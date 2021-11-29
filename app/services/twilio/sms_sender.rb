@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class Twilio::SmsSender
-  def initialize(user)
-    @user = user
-    @phone = user.phone
+  def initialize(obj, message)
+    @obj = obj
+    @phone = obj.phone
+    @message = message
     @twilio_client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
     @errors = []
   end
@@ -22,7 +23,7 @@ class Twilio::SmsSender
     !uniq_errors.present?
   end
 
-  attr_accessor :user, :phone, :errors, :twilio_client
+  attr_accessor :obj, :phone, :errors, :twilio_client, :message
 
   private
 
@@ -31,23 +32,18 @@ class Twilio::SmsSender
   rescue Exception => e
     Rails.logger.debug e
     errors << "Message sending failed!#{e.message}"
-    TwilioMailer.send_email(user).deliver
+    TwilioMailer.send_email(obj).deliver
   end
 
   def validate
     errors << "Recipient number can't be blank" if phone.blank?
   end
 
-  def body
-    @body ||= "#{@user.verification_code} is your verification code"
-  end
-
   def twilio_request_params
-    params = {
+    {
       to: phone,
       from: ENV['TWILIO_FROM'],
-      body: body
+      body: message
     }
-    params
   end
 end

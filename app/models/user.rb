@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   def send_verfivation_code
     generate_verification_code
-    Twilio::SmsSender.new(self).send!
+    Twilio::SmsSender.new(self, "#{verification_code} is your verification code").send!
   end
 
   private
