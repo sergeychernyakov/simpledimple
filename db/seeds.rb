@@ -6,8 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.find_or_initialize_by(email: 'test@gmail.com')
+user = User.find_or_initialize_by(email: 'simple@test.com')
 user.first_name = 'test'
 user.last_name = 'user'
 user.password = 'testing123'
-user.save!AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+user.password_confirmation = 'testing123'
+user.phone = '123456789'
+user.save!
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
