@@ -17,12 +17,19 @@ class Twilio::BillNotificationSender
     return if payment_request.blank? || recipients.blank?
 
     recipients.each do |recipient|
-      Twilio::SmsSender.new(recipient,
-                            "Here is your per head bill: #{recipient.per_head.round(2)} against #{payment_request.title}").send!
+      Twilio::SmsSender.new(recipient, message_body(recipient)).send!
     end
   end
 
   def recipients
     payment_request.billing_details
+  end
+
+  def message_body(recipient)
+    "Here is your per head bill: #{recipient.per_head.round(2)} against #{payment_request.title}. You can follow this link pay #{payment_link(recipient)}"
+  end
+
+  def payment_link(recipient)
+    "https://venmo.com/?txn=charge&audience=friends&recipients=#{recipient.phone}&amount=#{recipient.per_head.round(2)}"
   end
 end
