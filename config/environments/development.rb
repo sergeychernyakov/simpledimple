@@ -62,4 +62,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
+
+  APP_URL = 'http://localhost:3000'.freeze
+  
 end

@@ -30,6 +30,7 @@ class Twilio::BillNotificationSender
   end
 
   def payment_link(recipient)
-    "https://venmo.com/?txn=charge&audience=friends&recipients=#{recipient.phone}&amount=#{recipient.per_head.round(2)}"
+    payment_long_url = "https://venmo.com/?txn=charge&audience=friends&recipients=#{recipient.phone}&amount=#{recipient.per_head.round(2)}"
+    ShortUrlCreator.new(payment_long_url).create!
   end
 end
