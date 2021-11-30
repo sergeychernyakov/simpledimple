@@ -13,5 +13,7 @@ Rails.application.routes.draw do
 
   resources :payment_requests
 
+  get '/short/:identifier' => 'short_urls#redirect'
+
   root to: 'home#index'
 end

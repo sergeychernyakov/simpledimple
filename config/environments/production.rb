@@ -105,4 +105,7 @@ Rails.application.configure do
     authentication: ENV['AUTHENTICATION'],
     enable_starttls_auto: true
   }
+
+  APP_URL = 'http://simpledimpleapp.com'.freeze
+
 end
