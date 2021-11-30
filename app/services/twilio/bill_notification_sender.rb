@@ -26,7 +26,7 @@ class Twilio::BillNotificationSender
   end
 
   def message_body(recipient)
-    "Here is your per head bill: #{recipient.per_head.round(2)} against #{payment_request.title}. You can follow this link pay #{payment_link(recipient)}"
+    "Here is your per head bill: #{recipient.per_head.round(2)} against #{payment_request.title}. You can follow this link to pay bill. #{payment_link(recipient)}"
   end
 
   def payment_link(recipient)
