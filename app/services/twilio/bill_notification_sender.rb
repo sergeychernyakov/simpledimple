@@ -2,7 +2,7 @@
 
 class Twilio::BillNotificationSender
   def initialize(payment_request)
-    @payment_request = payment_request
+    @payment_request = payment_request&.reload
   end
 
   def send!
@@ -18,7 +18,7 @@ class Twilio::BillNotificationSender
 
     recipients.each do |recipient|
       Twilio::SmsSender.new(recipient,
-                            "Here is your per head bill: #{recipient.per_head} against #{payment_request.title}").send!
+                            "Here is your per head bill: #{recipient.per_head.round(2)} against #{payment_request.title}").send!
     end
   end
 
