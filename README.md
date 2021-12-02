@@ -7,15 +7,18 @@ application up and running.
 ```
 cp .env.sample .env
 
-bundle install
-
+Install dependencies for rtesseract
 sudo apt install libleptonica-dev
 sudo apt install libtesseract-dev
 
-image = RTesseract.new(image_path)
-image.to_s
-will return image all in text format
+bundle install
 
 rake db:setup
 rails c
+
+Image can be converted to readable text using RTesseract
+image = RTesseract.new(image_path)
+image.to_s
+This will return image in text format
+
 ```
