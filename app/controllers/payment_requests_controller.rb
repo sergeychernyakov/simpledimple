@@ -8,7 +8,8 @@ class PaymentRequestsController < ApplicationController
 
   def create
     @payment_request = PaymentRequest.new(payment_request_params)
-    @payment_request.bill_total = 1000 #ToDO bill_total of payment request would be set as per the AWS texture reading. for now assigning 1000 hardcode
+    @payment_request = Bills::TotalReader.new(@payment_request).read
+    #@payment_request.bill_total = 1000 #ToDO bill_total of payment request would be set as per the AWS texture reading. for now assigning 1000 hardcode
     if @payment_request.save
       Bills::Divider.new(@payment_request).call
       redirect_to(payment_requests_path, notice: 'Payment Request Created Successfully')

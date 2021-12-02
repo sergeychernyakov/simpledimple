@@ -38,6 +38,7 @@ gem 'twilio-ruby', '~> 5.61.0'
 # Authentication
 gem 'devise'
 gem "image_processing", ">= 1.2"
+gem 'rtesseract'
 
 
 # ActiveAdmin

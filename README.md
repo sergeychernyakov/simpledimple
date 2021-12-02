@@ -8,6 +8,14 @@ application up and running.
 cp .env.sample .env
 
 bundle install
+
+sudo apt install libleptonica-dev
+sudo apt install libtesseract-dev
+
+image = RTesseract.new(image_path)
+image.to_s
+will return image all in text format
+
 rake db:setup
 rails c
 ```

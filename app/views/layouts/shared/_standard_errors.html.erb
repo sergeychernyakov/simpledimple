@@ -2,7 +2,7 @@
 	<div class="alert alert-danger">
 	  <a class="close" data-dismiss="alert">×</a>
 	  <% obj.errors.full_messages.each do |msg| %>
-	    <p><%= raw msg %></p>
+	    <p><%= raw msg.to_s %></p>
 	  <% end %>
 	</div>
 <% end %>

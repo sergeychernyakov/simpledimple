@@ -13,7 +13,13 @@
 
     <div class="form-group">
       <label for="pwd">Bill Attachment:</label>
-      <%= f.file_field :bill_attachment , class: "form-control", required: true %>
+      <%= f.file_field :bill_attachment , class: "form-control" %>
+      <span>Upload a valid clear image for bill or type total amount:</span>
+    </div>
+
+    <div class="form-group">
+      <label for="pwd">Bill Total Amount</label>
+      <%= f.text_field :bill_total , class: "form-control", placeholder: "Upload a valid clear image for bill or type total amount" %>
     </div>
 
     <div class="row">
