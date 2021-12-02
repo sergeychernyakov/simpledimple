@@ -1,0 +1,9 @@
+- user_name = current_user.to_s.present? ? current_user.to_s : "Sir"
+%h2
+  Hello #{user_name}, Please enter your verification code
+= form_with url: verification_users_path, method: :put do |form|
+  = form.label :verification_code, "Verification Code"
+  = form.text_field :verification_code
+  = form.submit "Submit"
+%br/
+= link_to "Resend", resend_verification_code_users_path
