@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -11,5 +13,11 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'home#index'
+  unauthenticated :user do
+    root to: 'home#index'
+  end
+
+  authenticated :user do
+    root to: 'home#dashboard', as: :user_dashboard
+  end
 end

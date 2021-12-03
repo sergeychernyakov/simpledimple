@@ -1,2 +1,109 @@
-%h1 Welcome
-= link_to "Sign Out", destroy_user_session_path, method: :delete
+/ Divided Section
+.container
+  .row.second-row
+    .p-3.col-sm-12.col-md-4
+      =image_tag "person1.png", class: 'img-fluid person1', alt: 'person1'
+    .p-3.col-sm-12.col-md-1
+    .p-3.col-sm-12.col-md-7
+      %h1.title Lorem Ipsum Is
+      %h3.subtitle
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    .p-3.col-sm-12.col-md-7
+      %h1.title1
+        Lorem Ipsum Is
+      %h3.subtitle
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+    .p-3.col-sm-12.col-md-1
+    .p-3.col-sm-12.col-md-4
+      =image_tag "person2.png", class: 'img-fluid person2', alt: 'person2'
+/ Gallery Section
+.container-fluid
+  .row
+    .col-sm-12.col-md-6.black-image
+      %h1.home-title Lorem Ipsum Is
+      %h4.home-title
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  standard dummy text ever since the 1500s, when an unknown printer took
+      =image_tag "phone1.png", class: 'img-fluid phone1', alt: 'phone1'
+    .col-sm-12.col-md-6.blue-image
+      %h1.home-title Lorem Ipsum Is
+      %h4.home-title
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  standard dummy text ever since the 1500s, when an unknown printer took
+      =image_tag "phone2.png", class: 'img-fluid phone2', alt: 'phone2'   
+/ Service Section
+.container
+  .row.icon-row
+    .p-3.col-sm-12.col-md-6.col-lg-3
+      =image_tag "icon1.png", class: 'img-fluid icon', alt: 'icon1'
+      %h5.icon-title Out of the box ideas
+      %h6.icon-subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est nec enim egestas
+    .p-3.col-sm-12.col-md-6.col-lg-3
+      =image_tag "icon2.png", class: 'img-fluid icon', alt: 'icon2'
+      %h5.icon-title Out of the box ideas
+      %h6.icon-subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est nec enim egestas
+    .p-3.col-sm-12.col-md-6.col-lg-3
+      =image_tag "icon3.png", class: 'img-fluid icon', alt: 'icon3'
+      %h5.icon-title Fits all screens
+      %h6.icon-subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est nec enim egestas
+    .p-3.col-sm-12.col-md-6.col-lg-3
+      =image_tag "icon4.png", class: 'img-fluid icon', alt: 'icon4'
+      %h5.icon-title 24/7 support
+      %h6.icon-subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est nec enim egestas adipiscing. Nunc
+/ Slider Section
+.slider-image
+  .container
+    .slider-header
+      =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
+      =image_tag "avatar.png", class: 'img-fluid avatar', alt: 'avatar'
+      =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
+      %p.name Mark Steele
+      %p.role Designer at LA STUDIO
+      =image_tag "line.png", class: 'img-fluid line', alt: 'line'
+    / text slide
+    #carouselExampleCaptions.carousel.slide{"data-bs-ride" => "carousel"}
+      .carousel-indicators
+        %button{"aria-label" => "Slide 1", "data-bs-slide-to" => "0", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+        %button.active{"aria-current" => "true", "aria-label" => "Slide 2", "data-bs-slide-to" => "1", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+        %button{"aria-label" => "Slide 3", "data-bs-slide-to" => "2", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+      .carousel-inner
+        .carousel-item
+          .carousel-caption.d-md-block
+            %h3.description
+              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit."
+        .carousel-item.active
+          .carousel-caption.d-md-block
+            %h3.description
+              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit."
+        .carousel-item
+          .carousel-caption.d-md-block
+            %h3.description
+              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit."/
+.light-blue
+  .container
+    .row
+      .col-sm-12.col-md-6.manage-money
+        %h1.title Lorem Ipsum is
+        %h1.title1 Manage money simply dummy
+        %h3
+          Reach your goals with personalized insights,custom budgets, spend tracking, and subscription monitoring all for free.
+        %a.btn.sign-up.buttons download
+      .col-sm-12.col-md-6
+        =image_tag "iphone.png", class: 'img-fluid iphone', alt: 'iphone'
+/ Partners Section
+.container.partner-section
+  .row
+    .p-3.col-sm-12.col-lg-4
+      %p.partners.title Best Partners
+      %p.partner-title
+        Fusce vulputate eleifend sapien bulum purus quam, scelerisque ut, mollis vulputate felis eros.
+    .p-3.col-sm-6.col-lg-2.label-icon
+      =image_tag "icon5.png", class: 'img-fluid', alt: 'icon5'
+    .p-3.col-sm-6.col-lg-2.label-icon
+      =image_tag "icon6.png", class: 'img-fluid', alt: 'icon6'
+    .p-3.col-sm-6.col-lg-2.label-icon
+      =image_tag "icon8.png", class: 'img-fluid', alt: 'icon8'
+    .p-3.col-sm-6.col-lg-2.label-icon
+      =image_tag "icon7.png", class: 'img-fluid', alt: 'icon7'

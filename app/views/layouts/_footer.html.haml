@@ -1,0 +1,60 @@
+/ Footer Section
+.footer
+  .container
+    .row
+      .p-3.col-xs-12.col-md-4
+        %p.number 01.
+        %p.footer-title about us
+        =image_tag "logo1.png", class: 'img-fluid footer-logo', alt: 'footer-logo'
+        .row
+          .p-3.col-sm-12.col-lg-6
+            .footer-bottom
+              .icon-groups
+                =image_tag "home.png", alt: 'home'
+              .footer-icon-next
+                %p.footer-text 900 Colonial Drive Woodbridge, VA 22191
+          .p-3.col-sm-12.col-lg-6
+            .footer-bottom
+              .icon-groups
+                =image_tag "tele.png", class: 'tele', alt: 'phone-email'
+              .footer-icon-next
+                %p.footer-text
+                  %a{:href => "tel: +8 800 123 456 789"} +8 800 123 456 789
+            .footer-bottom
+              .icon-groups
+                =image_tag "mail.png", class: 'mail', alt: 'phone-email'
+              .footer-icon-next
+                %p.footer-text
+                  %a{:href => "mailto:admin@fwd.com"} admin@fwd.com
+      .p-3.col-xs-12.col-md-4
+        %p.number 02.
+        %p.footer-title.footer-height our twitter
+        .footer-bottom
+          .icon-groups
+            =image_tag "twitter.png", alt: 'twitter'
+          .footer-icon-next
+            %p.footer-text
+              2,000 Sales Reached, Thanks for everyone!
+              %a{:href => "https://t.co/aJSddQh2tT"} https://t.co/aJSddQh2tT
+              %br/
+              %span.title 20 days ago
+        .footer-bottom
+          .icon-groups
+            =image_tag "twitter.png", alt: 'twitter'
+          .footer-icon-next
+            %p.footer-text
+              Check out our new themes and templates
+              %a{:href => "https://t.co/UHoAYEDb6c"} https://t.co/UHoAYEDb6c
+              %br/
+              %span.title 24 days ago
+      .p-3.col-xs-12.col-md-4
+        %p.number 03.
+        %p.footer-title.footer-height subscribe now
+        .input-group.mb-3
+          %input.form-control{"aria-describedby" => "button-addon2", "aria-label" => "Email Address", :placeholder => "Email Address", :type => "text"}/
+          %button#button-addon2.btn.btn-success{:type => "button"} SUBSCRIBE
+        %p.footer-text
+          Fusce vulputate eleifend sapien. Vestibulum purus uam, scelerisque ut, mollis sed, nonummy id, metus cumsan. lorem in dui. Cras ultricies mi eu turpis hendrerit.
+.footer1
+  .container
+    %p.footer1-text @2021 All rights reserved
