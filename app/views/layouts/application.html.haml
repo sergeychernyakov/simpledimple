@@ -21,6 +21,7 @@
       = render 'layouts/header'
       - if home_page?
         = render 'home/main_slider'
-    = yield
+    .container
+      = yield
     / Footer Section
     = render 'layouts/footer'
