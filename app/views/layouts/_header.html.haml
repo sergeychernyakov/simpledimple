@@ -2,7 +2,8 @@
   .container
     %a.navbar-brand{:href => "#"}
       - image_path = (current_user || !home_page?) ? 'logo2.png' : 'logo.png'
-      = image_tag image_path, class: 'img-fluid logo', alt: 'Logo'
+      = link_to root_path do
+        = image_tag image_path, class: 'img-fluid logo', alt: 'Logo'
     %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse{class: ("nav-height" if current_user || !home_page?)}
