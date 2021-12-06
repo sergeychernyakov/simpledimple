@@ -50,37 +50,49 @@
       %h5.icon-title 24/7 support
       %h6.icon-subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est nec enim egestas adipiscing. Nunc
 / Slider Section
-.slider-image
-  .container
-    .slider-header
-      =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
-      =image_tag "avatar.png", class: 'img-fluid avatar', alt: 'avatar'
-      =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
-      %p.name Mark Steele
-      %p.role Designer at LA STUDIO
-      =image_tag "line.png", class: 'img-fluid line', alt: 'line'
-    / text slide
-    #carouselExampleCaptions.carousel.slide{"data-bs-ride" => "carousel"}
-      .carousel-indicators
-        %button{"aria-label" => "Slide 1", "data-bs-slide-to" => "0", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
-        %button.active{"aria-current" => "true", "aria-label" => "Slide 2", "data-bs-slide-to" => "1", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
-        %button{"aria-label" => "Slide 3", "data-bs-slide-to" => "2", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
-      .carousel-inner
-        .carousel-item
-          .carousel-caption.d-md-block
-            %h3.description
-              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit."
-        .carousel-item.active
-          .carousel-caption.d-md-block
-            %h3.description
-              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit."
-        .carousel-item
-          .carousel-caption.d-md-block
-            %h3.description
-              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit."/
+#carouselExampleCaptions.carousel.slide{"data-bs-ride" => "carousel"}
+  .carousel-indicators
+    %button{"aria-label" => "Slide 1", "data-bs-slide-to" => "0", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+    %button.active{"aria-current" => "true", "aria-label" => "Slide 2", "data-bs-slide-to" => "1", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+    %button{"aria-label" => "Slide 3", "data-bs-slide-to" => "2", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+  .carousel-inner
+    .carousel-item
+      = image_tag 'green-background.png', class: 'd-block w-100', alt: ''
+      .carousel-caption.d-md-block
+        =image_tag "avatar.png", class: 'img-fluid avatar', alt: 'avatar'
+        =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
+        =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
+        %p.name Mark Steele
+        %p.role Designer at LA STUDIO
+        = image_tag 'line.png', class: 'img-fluid line', alt: 'line'
+        %h3.description
+          “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit.”
+    .carousel-item.active
+      = image_tag 'green-background.png', class: 'd-block w-100', alt: ''
+      .carousel-caption.d-md-block
+        =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
+        =image_tag "avatar.png", class: 'img-fluid avatar', alt: 'avatar'
+        =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
+        %p.name Mark Steele
+        %p.role Designer at LA STUDIO
+        = image_tag 'line.png', class: 'img-fluid line', alt: 'line'
+        %h3.description
+          “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit.”
+    .carousel-item
+      = image_tag 'green-background.png', class: 'd-block w-100', alt: ''
+      .carousel-caption.d-md-block
+        =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
+        =image_tag "avatar.png", class: 'img-fluid avatar1', alt: 'avatar'
+        =image_tag "avatar.png", class: 'img-fluid avatar', alt: 'avatar'
+        %p.name Mark Steele
+        %p.role Designer at LA STUDIO
+        = image_tag 'line.png', class: 'img-fluid line', alt: 'line'
+        %h3.description
+          “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit.”
+
 .light-blue
   .container
     .row

@@ -240,10 +240,6 @@ h6 {
   bottom: 6rem;
 }
 
-.carousel.slide {
-  margin-top: 80px;
-}
-
 .light-blue {
   background-image: asset_url("light-blue.png");
   background-repeat: no-repeat, repeat;
@@ -458,26 +454,6 @@ h6 {
   margin-right: 15px;
   margin-top: 5px;
 }
-
-.slider-image {
-  background-image: asset_url("green-background.png");
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
-}
-
-.carousel-caption {
-  position: static;
-}
-
-.carousel-inner {
-  bottom: 3rem;
-}
-
-.slider-header {
-  text-align: center;
-  padding-top: 100px;
-}
-
 .avatar {
   margin-left: 15px;
   margin-right: 15px;
